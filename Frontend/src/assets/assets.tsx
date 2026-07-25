@@ -6,7 +6,7 @@ import product4 from './product4.jpg'; // headphone
 import product5 from './product5.jpg'; // speaker
 import product6 from './product6.jpg'; // sneakers
 import product7 from './product7.png'; // trolly bag
-import model1 from './model1.png'; // model men
+import model1 from './model1.jpg'; // model men
 import model2 from './model2.jpg'; // model women
 import generated1 from './generated1.png'; // men with trolly bag
 import generated2 from './generated2.png'; // women with trolly bag
