@@ -85,22 +85,46 @@ export const plansData = [
 ];
 
 export const faqData = [
-    {
-        question: 'What services does your agency provide?',
-        answer: 'We offer end-to-end digital services including brand strategy, UI/UX design, web and app development and growth-focused marketing solutions.'
-    },
-    {
-        question: 'Do you work with startups or only large companies?',
-        answer: 'We work with startups, growing businesses and established brands. Our process is flexible and tailored to match your goals and scale.'
-    },
-    {
-        question: 'How long does a typical project take?',
-        answer: 'Project timelines vary by scope, but most projects take between 2–6 weeks. We provide a clear timeline after the discovery phase.'
-    },
-    {
-        question: 'Do you offer ongoing support after launch?',
-        answer: 'Yes. We offer maintenance, optimization and growth support packages to ensure your product continues to perform and evolve.'
-    }
+  {
+    question: "How does the AI generate product images?",
+    answer:
+      "Upload your model photo and product photo, and our AI combines them into realistic, high-quality marketing images in just a few seconds.",
+  },
+  {
+    question: "Can I download the generated images?",
+    answer:
+      "Yes. You can preview every generated image before downloading it in high quality for use in ads, social media, websites, or online stores.",
+  },
+  {
+    question: "How are AI videos created?",
+    answer:
+      "Once you're happy with your generated image, you can transform it into a realistic marketing video complete with AI-powered motion, captions, and voiceovers.",
+  },
+  {
+    question: "Can I use the generated content commercially?",
+    answer:
+      "Yes. All paid plans include commercial usage rights, allowing you to use your generated images and videos for marketing, advertising, and e-commerce.",
+  },
+  {
+    question: "What file formats are supported?",
+    answer:
+      "You can upload common image formats such as JPG, JPEG, PNG, and WebP. Generated images and videos can be downloaded in high-quality formats.",
+  },
+  {
+    question: "Can I cancel my subscription anytime?",
+    answer:
+      "Absolutely. You can upgrade, downgrade, or cancel your subscription at any time. There are no long-term contracts or hidden fees.",
+  },
+  {
+    question: "Who is this platform built for?",
+    answer:
+      "Our platform is designed for e-commerce brands, Shopify store owners, Amazon sellers, content creators, marketing teams, and digital agencies looking to create professional product ads faster.",
+  },
+  {
+    question: "Do I need any design or video editing experience?",
+    answer:
+      "Not at all. Simply upload your images, let the AI generate your content, and download professional-quality marketing assets in minutes.",
+  },
 ];
 
 export const footerLinks = [
