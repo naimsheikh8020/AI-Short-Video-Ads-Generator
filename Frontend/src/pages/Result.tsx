@@ -1,7 +1,10 @@
+import { useParams } from "react-router-dom";
 
 const Result = () => {
+  const { projectId } = useParams<{ projectId: string }>();
+
   return (
-    <div>Result</div>
+    <div>Result for project: {projectId}</div>
   )
 }
 
