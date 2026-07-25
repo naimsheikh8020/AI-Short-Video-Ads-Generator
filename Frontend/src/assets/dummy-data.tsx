@@ -19,49 +19,69 @@ export const featuresData = [
 ];
 
 export const plansData = [
-    {
-        id: 'starter',
-        name: 'Starter',
-        price: '$499',
-        desc: 'Best for early-stage startups.',
-        credits: 'One-time',
-        features: [
-            'Project discovery & planning',
-            'UI/UX design',
-            'Basic website development',
-            '1 revision round',
-            'Email support'
-        ]
-    },
-    {
-        id: 'pro',
-        name: 'Growth',
-        price: '$1,499',
-        desc: 'Growing teams and businesses.',
-        credits: 'Monthly',
-        features: [
-            'Everything in Starter',
-            'Advanced UI/UX design',
-            'Custom development',
-            'Performance optimization',
-            'Priority support'
-        ],
-        popular: true
-    },
-    {
-        id: 'ultra',
-        name: 'Scale',
-        price: '$3,999',
-        desc: 'For brands ready to scale fast.',
-        credits: 'Custom',
-        features: [
-            'Everything in Growth',
-            'Dedicated project manager',
-            'Ongoing optimization',
-            'Marketing & growth support',
-            'Chat + Email support'
-        ]
-    }
+//   {
+//     id: "free",
+//     name: "Free",
+//     price: "$0",
+//     desc: "Try the platform before upgrading.",
+//     credits: "10 Images • 2 Videos / month",
+//     features: [
+//       "10 AI image generations",
+//       "2 AI video generations",
+//       "Watermarked downloads",
+//       "720p video export",
+//       "Community support",
+//     ],
+//   },
+  {
+    id: "starter",
+    name: "Starter",
+    price: "$19",
+    desc: "Perfect for creators and small businesses.",
+    credits: "100 Images • 20 Videos / month",
+    features: [
+      "100 AI image generations",
+      "20 AI video generations",
+      "1080p HD export",
+      "AI voice & captions",
+      "No watermark",
+      "Commercial use",
+      "Email support",
+    ],
+  },
+  {
+    id: "pro",
+    name: "Pro",
+    price: "$49",
+    desc: "Best for growing brands and agencies.",
+    credits: "400 Images • 100 Videos / month",
+    popular: true,
+    features: [
+      "400 AI image generations",
+      "100 AI video generations",
+      "Priority rendering",
+      "Premium AI models",
+      "Ultra HD export",
+      "Brand kit",
+      "Priority support",
+    ],
+  },
+  {
+    id: "agency",
+    name: "Agency",
+    price: "$149",
+    desc: "For agencies managing multiple brands.",
+    credits: "1500 Images • 400 Videos / month",
+    features: [
+      "1500 AI image generations",
+      "400 AI video generations",
+      "Multiple workspaces",
+      "Team collaboration",
+      "API access",
+      "Dedicated account manager",
+      "24/7 priority support",
+    ],
+  },
 ];
 
 export const faqData = [
