@@ -32,7 +32,7 @@ export default function Title({ title, heading, description }: TitleProps) {
                 </motion.h2>
             )}
             {description && (
-                <motion.p className='max-w-md mx-auto text-sm text-gray-400 my-3'
+                <motion.p className='max-w-xl mx-auto text-sm] text-gray-400 my-3'
                     initial={{ y: 60, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
