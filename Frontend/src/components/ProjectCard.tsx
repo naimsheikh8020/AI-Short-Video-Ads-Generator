@@ -57,6 +57,7 @@ const ProjectCard = ({ gen, setGeneration, forCommunity = false }: { gen: Projec
         {/* Details */}
         <div className="p-4">
           <div className="flex items-start justify-between gap-4">
+            {/* Product name date aspect ratio */}
             <div className="flex-1">
               <h3 className="font-medium text-lg mb-1">{gen.productName}</h3>
               <p className="text-sm text-gray-400">Created: {new Date(gen.createdAt).toLocaleString()}</p>
@@ -72,7 +73,17 @@ const ProjectCard = ({ gen, setGeneration, forCommunity = false }: { gen: Projec
               </div>
             </div>
           </div>
-          <div></div>
+          {/* Product Description */}
+          <div>
+            {
+              gen.productDescription && (
+                <div className="mt-3">
+                  <p className="text-xs text-gray-400 mb-1">Description</p>
+                  <div className="text-sm text-gray-300 bg-white/3 p-2 rounded-md wrap-break-word">{gen.productDescription}</div>
+                </div>
+              )
+            }
+          </div>
         </div>
       </div>
     </div>
