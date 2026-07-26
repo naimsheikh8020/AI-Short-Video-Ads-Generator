@@ -2,6 +2,7 @@ import { useState, type Dispatch } from "react"
 import type { Project } from "../types"
 import type React from "react"
 import { useNavigate } from "react-router-dom"
+import { Loader2Icon } from "lucide-react"
 
 const ProjectCard = ({gen, setGeneration, forCommunity = false}: {gen: Project, setGeneration: Dispatch<React.SetStateAction<Project[]>>, forCommunity?:boolean}) => {
   const navigate = useNavigate();
@@ -21,6 +22,13 @@ const ProjectCard = ({gen, setGeneration, forCommunity = false}: {gen: Project, 
             <video src={gen.generatedVideo} muted loop playsInline className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition duration-500"
             onMouseEnter={(e)=>e.currentTarget.play()}
             onMouseLeave={(e)=> e.currentTarget.pause()}/>
+          )
+        }
+        {
+          (!gen?.generatedImage && !gen?.generatedVideo) && (
+            <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center bg-black/20">
+              <Loader2Icon className="size-7 animate-spin"/>
+            </div>
           )
         }
       </div>
