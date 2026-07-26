@@ -1,7 +1,8 @@
 import { useState } from "react"
 import Title from "../components/Title"
 import UploadZone from "../components/UploadZone"
-import { RectangleHorizontal, RectangleVertical } from "lucide-react"
+import {  Loader2Icon, RectangleHorizontal, RectangleVertical, Wand2Icon } from "lucide-react"
+import { PrimaryButton } from "../components/Buttons"
 
 const Generator = () => {
   const [name, setName] = useState('')
@@ -59,19 +60,32 @@ const Generator = () => {
 
             <div className="mt-4 text-gray-300">
               <label htmlFor="productDescription"> Product Description <span className="text-xs text-violet-400">(optional)</span></label>
-              <textarea id="productDescription" rows={4 } value={productDescription} onChange={(e)=>setProductDescription(e.target.value)} placeholder="Enter the description of the product" className="w-full mt-4 bg-white/3 rounded-lg border-2 p-4 text-sm border-violet-200/10 focus:border-violet-500/50 outline-none resize-none transition-all" />
+              <textarea id="productDescription" rows={4} value={productDescription} onChange={(e) => setProductDescription(e.target.value)} placeholder="Enter the description of the product" className="w-full mt-4 bg-white/3 rounded-lg border-2 p-4 text-sm border-violet-200/10 focus:border-violet-500/50 outline-none resize-none transition-all" />
             </div>
             <div className="mt-4 text-gray-300">
               <label className="block text-sm mb-4">Aspect Ratio</label>
               <div className="flex gap-3">
-                <RectangleVertical onClick={()=>setAspectRatio('9:16')} className={`p-2.5 size-13 bg-white/6 rounded transition-all ring-2 ring-transparent cursor-pointer ${aspectRatio == '9:16' ? 'ring-violet-500/50 bg-white/10' : ''}`}/>
-                  <RectangleHorizontal onClick={()=>setAspectRatio('16:9')} className={`p-2.5 size-13 bg-white/6 rounded transition-all ring-2 ring-transparent cursor-pointer ${aspectRatio == '16:9' ? 'ring-violet-500/50 bg-white/10' : ''}`}/>
+                <RectangleVertical onClick={() => setAspectRatio('9:16')} className={`p-2.5 size-13 bg-white/6 rounded transition-all ring-2 ring-transparent cursor-pointer ${aspectRatio == '9:16' ? 'ring-violet-500/50 bg-white/10' : ''}`} />
+                <RectangleHorizontal onClick={() => setAspectRatio('16:9')} className={`p-2.5 size-13 bg-white/6 rounded transition-all ring-2 ring-transparent cursor-pointer ${aspectRatio == '16:9' ? 'ring-violet-500/50 bg-white/10' : ''}`} />
               </div>
             </div>
 
+            <div className="mt-4 text-gray-300">
+              <label htmlFor="userPrompt"> User Prompt <span className="text-xs text-violet-400">(optional)</span></label>
+
+              <textarea id="userPrompt" rows={4} value={userPrompt} onChange={(e) => setUserPrompt(e.target.value)} placeholder="Describe how you want the narration to be" className="w-full mt-4 bg-white/3 rounded-lg border-2 p-4 text-sm border-violet-200/10 focus:border-violet-500/50 outline-none resize-none transition-all" />
+            </div>
+
+
           </div>
         </div>
-
+        <div className="flex justify-center mt-10">
+          <PrimaryButton disabled={isGenerating} className="px-10 py-3 rounded-md disabled:opacity-70 disabled:cursor-not-allowed">
+            {
+              isGenerating ? (<><Loader2Icon className="size animate-spin"/>Generating...</>) : (<><Wand2Icon className="size-5"/>Generate Image</>)
+            }
+          </PrimaryButton>
+        </div>
       </form>
     </div>
   )
