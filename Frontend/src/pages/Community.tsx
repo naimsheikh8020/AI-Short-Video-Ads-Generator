@@ -4,7 +4,7 @@ import { dummyGenerations } from "../assets/assets"
 import { Loader2Icon } from "lucide-react"
 
 const Community = () => {
-  const [project, setProject] = useState<Project[]>([])
+  const [projects, setProject] = useState<Project[]>([])
   const [loading, setLoading] = useState(true)
 
   const fetchProject = async () => {
@@ -18,7 +18,7 @@ const Community = () => {
   }, [])
   return loading ? (
     <div className="flex items-center justify-center min-h-screen mt-[-100px] md:mt-[-150px] xl:mt-[-200px]">
-      <Loader2Icon className="size-20 animate-spin text-indigo-400"/>
+      <Loader2Icon className="size-20 animate-spin text-indigo-400" />
     </div>)
 
     :
@@ -28,6 +28,13 @@ const Community = () => {
           <h1 className="text-3xl md:text-4xl font-semibold mb-4">Community</h1>
           <p className="text-gray-400">See what others are creating with UGC.ai</p>
         </header>
+
+        {/* Project List */}
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
+          {projects.map((project) => {
+            return <div key={project.id}>{project.id}</div>;
+          })}
+        </div>
       </div>
     </div>)
 }
