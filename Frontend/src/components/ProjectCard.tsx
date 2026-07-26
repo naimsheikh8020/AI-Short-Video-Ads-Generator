@@ -35,12 +35,12 @@ const ProjectCard = ({ gen, setGeneration, forCommunity = false }: { gen: Projec
           <div className="absolute left-3 top-3 flex-gap-2 items-center">
             {
               gen.isGenerating && (
-                <span className="text-xs px-2 py-1 bg-yellow-600/300 rounded-full">Generating</span>
+                <span className="text-xs px-2 py-1 bg-yellow-600 rounded-full">Generating</span>
               )
             }
             {
               gen.isPublished && (
-                <span className="text-xs px-2 py-1 bg-green-600/300 rounded-full">Published</span>
+                <span className="text-xs px-2 py-1 bg-green-600 rounded-full">Published</span>
               )
             }
 
