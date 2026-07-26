@@ -46,6 +46,11 @@ const ProjectCard = ({ gen, setGeneration, forCommunity = false }: { gen: Projec
 
           </div>
 
+          {/* Source Img */}
+          <div className="absolute right-3 bottom-3">
+            <img src={gen.uploadedImages[0]} alt="Product" className="w-16 h-16 object-cover rounded-full animate-float"/>
+            <img src={gen.uploadedImages[1]} alt="model" className="w-16 h-16 object-cover rounded-full animate-float -ml-8" style={{animationDelay: '3s'}}/>
+          </div>
 
         </div>
 
