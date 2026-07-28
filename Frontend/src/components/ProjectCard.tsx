@@ -86,7 +86,7 @@ const ProjectCard = ({ gen, setGeneration, forCommunity = false }: { gen: Projec
             {/* User Prompot  */}
             {
               gen.userPrompt && (
-                <div className="mt-3">
+                <div className="mt-4">
                   <p className="text-xs text-gray-400 mb-1">User Prompt</p>
                   <div className="text-xs text-gray-300">{gen.userPrompt}</div>
                 </div>
