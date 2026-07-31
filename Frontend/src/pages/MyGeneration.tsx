@@ -24,20 +24,35 @@ const MyGeneration = () => {
 
     : (
       <div className="min-h-screen text-white p-6 md:p-12 mb-28">
-      <div className="max-w-6xl mx-auto">
-        <header className="mb-12">
-          <h1 className="text-3xl md:text-4xl font-semibold mb-4">My Generation</h1>
-          <p className="text-gray-400">View your generated content here</p>
-        </header>
+        <div className="max-w-6xl mx-auto">
+          <header className="mb-12">
+            {
+              generations.length > 0 && (
+                <>
+                  <h1 className="text-3xl md:text-4xl font-semibold mb-4">My Generation</h1>
+                  <p className="text-gray-400">View your generated content here</p>
+                </>)
+            }
 
-        {/* generations List */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
-          {generations.map((gen) => {
-            return <ProjectCard key={gen.id} gen={gen} setGeneration={setGenerations} />
-          })}
+          </header>
+
+          {/* generations List */}
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
+            {generations.map((gen) => {
+              return <ProjectCard key={gen.id} gen={gen} setGeneration={setGenerations} />
+            })}
+          </div>
+
+          {
+            generations.length === 0 && (
+              <div className="flex flex-col items-center justify-center mt-20">
+                <p className="text-gray-400 text-lg">You have no generations yet.</p>
+                <p className="text-gray-400 text-lg">Start generating content to see it here.</p>
+              </div>
+            )
+          }
         </div>
       </div>
-    </div>
     )
 }
 
