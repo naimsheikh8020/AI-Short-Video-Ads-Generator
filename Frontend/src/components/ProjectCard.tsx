@@ -48,8 +48,8 @@ const ProjectCard = ({ gen, setGeneration, forCommunity = false }: { gen: Projec
 
           {/* Source Img */}
           <div className="absolute right-3 bottom-3">
-            <img src={gen.uploadedImages[0]} alt="Product" className="w-16 h-16 object-cover rounded-full animate-float"/>
-            <img src={gen.uploadedImages[1]} alt="model" className="w-16 h-16 object-cover rounded-full animate-float -ml-8" style={{animationDelay: '3s'}}/>
+            <img src={gen.uploadedImages[0]} alt="Product" className="w-16 h-16 object-cover rounded-full animate-float" />
+            <img src={gen.uploadedImages[1]} alt="model" className="w-16 h-16 object-cover rounded-full animate-float -ml-8" style={{ animationDelay: '3s' }} />
           </div>
 
         </div>
@@ -87,7 +87,7 @@ const ProjectCard = ({ gen, setGeneration, forCommunity = false }: { gen: Projec
             {
               gen.userPrompt && (
                 <div className="mt-4">
-                  <p className="text-xs text-gray-400 mb-1">User Prompt</p>
+                  <p className="text-xs text-gray-400 mb-1"> Prompt</p>
                   <div className="text-xs text-gray-300">{gen.userPrompt}</div>
                 </div>
               )
