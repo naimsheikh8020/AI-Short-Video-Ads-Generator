@@ -3,6 +3,7 @@ import type { Project } from "../types"
 import { dummyGenerations } from "../assets/assets"
 import { Loader2Icon } from "lucide-react"
 import ProjectCard from "../components/ProjectCard"
+import { PrimaryButton } from "../components/Buttons"
 
 const MyGeneration = () => {
   const [generations, setGenerations] = useState<Project[]>([])
@@ -45,9 +46,12 @@ const MyGeneration = () => {
 
           {
             generations.length === 0 && (
-              <div className="flex flex-col items-center justify-center mt-20">
+              <div className="flex flex-col items-center justify-center mt-20 bg-white/5 border border-white/10 rounded-xl py-20">
                 <p className="text-gray-400 text-lg">You have no generations yet.</p>
                 <p className="text-gray-400 text-lg">Start generating content to see it here.</p>
+                <PrimaryButton onClick={()=> window.location.href = '/generate'} className="mt-4">
+                  Generate Content
+                </PrimaryButton>
               </div>
             )
           }
