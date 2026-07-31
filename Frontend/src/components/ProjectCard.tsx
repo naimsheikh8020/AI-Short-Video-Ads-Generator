@@ -2,11 +2,27 @@ import { useState, type Dispatch } from "react"
 import type { Project } from "../types"
 import type React from "react"
 import { useNavigate } from "react-router-dom"
-import { EllipsisIcon, Loader2Icon } from "lucide-react"
+import { EllipsisIcon, ImageIcon, Loader2Icon, Share2Icon, ShareIcon, Trash2Icon } from "lucide-react"
 
 const ProjectCard = ({ gen, setGeneration, forCommunity = false }: { gen: Project, setGeneration: Dispatch<React.SetStateAction<Project[]>>, forCommunity?: boolean }) => {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const handleDelete = async (id: string) => {
+    const confirm = window.confirm('Are you sure you want to delete this project?')
+    if(!confirm) return;
+    console.log(id)
+  }
+
+  const togglePublish = async (projectId: string) => {
+ 
+    console.log(projectId)
+  }
+
+
+
+
+
   return (
     <div key={gen.id} className="mb-4 break-inside-avoid">
       <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-white/20 transition group">
@@ -50,9 +66,52 @@ const ProjectCard = ({ gen, setGeneration, forCommunity = false }: { gen: Projec
           {/* Action menu for my generations only */}
           {!forCommunity && (
             <div className="absolute right-3 top-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-              <button className="rounded-full bg-black/10 p-1 hover:bg-black/20">
-                <EllipsisIcon className="size-5" />
-              </button>
+              {/* 3 dots */}
+              <div>
+                <EllipsisIcon
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setMenuOpen(!menuOpen);
+                  }}
+                  className="size-5 cursor-pointer ml-auto bg-black/10 rounded-full p-1"
+                />
+              </div>
+
+              {/* Dropdown */}
+              <div className="flex flex-col items-end w-32 text-sm">
+                <ul
+                  className={`${menuOpen ? "block" : "hidden"
+                    } overflow-hidden absolute right-0 w-40 bg-black/50 backdrop-blur text-white border border-gray-500/50 rounded-lg shadow-md mt-2 py-1 z-10`}
+                >
+                  {gen.generatedImage && (
+                    <a
+                      href={gen.generatedImage}
+                      download
+                      className="flex gap-2 items-center px-4 py-2 hover:bg-black/10 cursor-pointer"
+                    >
+                      Download Image
+                    </a>
+                  )}
+                  {gen.generatedVideo && (
+                    <a
+                      href={gen.generatedVideo}
+                      download
+                      className="flex gap-2 items-center px-4 py-2 hover:bg-black/10 cursor-pointer"
+                    >
+                      Download Video
+                    </a>
+                  )}
+                  {(gen.generatedVideo || gen.generatedImage) && (
+                    <button onClick={() => navigator.share({ url: gen.generatedVideo || gen.generatedImage, title: gen.productName, text: gen.productDescription })}
+                      className="w-full flex gap-2 items-center px-4 py-2 hover:bg-black/10 cursor-pointer">
+                      <Share2Icon size={14}/> Share
+                    </button>
+                  )}
+                  <button onClick={() => handleDelete(gen.id)} className="w-full flex gap-2 items-center px-4 py-2 hover:bg-red-950/10 text-red-400 cursor-pointer">
+                    <Trash2Icon size={14}/>Delete
+                  </button>
+                </ul>
+              </div>
             </div>
           )}
 
