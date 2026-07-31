@@ -2,7 +2,7 @@ import { useState, type Dispatch } from "react"
 import type { Project } from "../types"
 import type React from "react"
 import { useNavigate } from "react-router-dom"
-import { Loader2Icon } from "lucide-react"
+import { EllipsisIcon, Loader2Icon } from "lucide-react"
 
 const ProjectCard = ({ gen, setGeneration, forCommunity = false }: { gen: Project, setGeneration: Dispatch<React.SetStateAction<Project[]>>, forCommunity?: boolean }) => {
   const navigate = useNavigate();
@@ -45,6 +45,16 @@ const ProjectCard = ({ gen, setGeneration, forCommunity = false }: { gen: Projec
             }
 
           </div>
+
+
+          {/* Action menu for my generations only */}
+          {!forCommunity && (
+            <div className="absolute right-3 top-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              <button className="rounded-full bg-black/10 p-1 hover:bg-black/20">
+                <EllipsisIcon className="size-5" />
+              </button>
+            </div>
+          )}
 
           {/* Source Img */}
           <div className="absolute right-3 bottom-3">
