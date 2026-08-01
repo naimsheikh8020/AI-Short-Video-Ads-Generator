@@ -2,7 +2,7 @@ import { useState, type Dispatch } from "react"
 import type { Project } from "../types"
 import type React from "react"
 import { useNavigate } from "react-router-dom"
-import { EllipsisIcon, ImageIcon, Loader2Icon, Share2Icon, ShareIcon, Trash2Icon } from "lucide-react"
+import { EllipsisIcon,  Loader2Icon, Share2Icon, Trash2Icon } from "lucide-react"
 import { GhostButton, PrimaryButton } from "./Buttons"
 
 const ProjectCard = ({ gen, setGeneration, forCommunity = false }: { gen: Project, setGeneration: Dispatch<React.SetStateAction<Project[]>>, forCommunity?: boolean }) => {

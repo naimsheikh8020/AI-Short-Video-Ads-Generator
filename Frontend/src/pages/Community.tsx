@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import type { Project } from "../types"
 import { dummyGenerations } from "../assets/assets"
-import { Loader2Icon } from "lucide-react"
 import ProjectCard from "../components/ProjectCard"
+import Loader from "../components/Loader"
 
 const Community = () => {
   const [projects, setProject] = useState<Project[]>([])
@@ -18,9 +18,7 @@ const Community = () => {
     fetchProject()
   }, [])
   return loading ? (
-    <div className="flex items-center justify-center min-h-screen mt-[-100px] md:mt-[-150px] xl:mt-[-200px]">
-      <Loader2Icon className="size-20 animate-spin text-indigo-400" />
-    </div>)
+    <Loader />)
 
     :
     (<div className="min-h-screen text-white p-6 md:p-12 mb-28">
@@ -33,7 +31,7 @@ const Community = () => {
         {/* Project List */}
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
           {projects.map((project) => {
-            return <ProjectCard key={project.id} gen={project} setGeneration={setProject} forCommunity={true}/>
+            return <ProjectCard key={project.id} gen={project} setGeneration={setProject} forCommunity={true} />
           })}
         </div>
       </div>
